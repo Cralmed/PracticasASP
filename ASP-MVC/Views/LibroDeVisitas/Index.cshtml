@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <p><a href="/LibroDeVisitas/Formulario">Dejá tus comentarios</a></p>
+        <p><a href="/LibroDeVisitas/ListadoDeVisitas">Comentario de los visitantes</a></p>
+        @{
+            string titulo = "Pagina Principal";
+            int dia = DateTime.Now.Day;
+            int mes = DateTime.Now.Month;
+            int anio = DateTime.Now.Year;
+            string texto;
+        }
+        <h1>@titulo</h1>
+        <h2>Fecha: @dia/@mes/@anio</h2>
+        @{
+            if (dia > 15)
+            {
+                texto = "estamos en la segunda mitad del mes";
+                <h2>Estamos en la segunda mitad</h2>
+            }
+            else
+            {
+                texto = "Estamos en la primera mitad del mes";
+                <h2>Estamos en la primera mitad</h2>
+            }
+
+        }
+    <table style="border: 1px solid blue; border-collapse: collapse">
+        @for (int fila = 0; fila < 10; fila++)
+        {
+        <tr>
+            @for (int columna = 0; columna < 10; columna++)
+            {
+            <td style="border: 1px solid blue; border-collapse:collapse">@fila * @columna = @(fila*columna)</td>
+
+            }
+        </tr>
+        }
+    </table>
+
+
+
+        <h3>@texto</h3>
+    </div>
+</body>
+</html>

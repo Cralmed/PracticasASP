@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modificar</title>
+</head>
+<body>
+    <div> 
+        <form action="/Articulos/Modificar" method="post">
+            <label>
+                Codigo: <br />
+                <input type="text" name="codigo" value="@Model.Codigo" readonly />
+            </label><br />
+            <label>
+                Descripción: <br />
+                <input type="text" name="descripcion" value="@Model.Descripcion"/>
+            </label><br /><label>
+                Precio: <br />
+                <input type="text" name="precio" value="@Model.Precio"/>
+            </label><br />
+                    <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>

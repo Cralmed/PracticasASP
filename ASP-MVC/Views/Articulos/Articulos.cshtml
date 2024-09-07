@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ASP_MVC.Models.Articulo>
+@{
+    Layout = null;
+    //Model
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Articulos</title>
+</head>
+<body>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Código</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Borrar</th>
+                <th>Modificar</th>
+            </tr>
+            @foreach (var articulo in Model)
+            {
+                <tr>
+                    <td>@articulo.Codigo</td>
+                    <td>@articulo.Descripcion</td>
+                    <td>@articulo.Precio</td>
+                    <td><a href="/Articulos/Baja?cod=@articulo.Codigo">Borrar</a></td>
+                    <td><a href="/Articulos/Modificar?cod=@articulo.Codigo">Modificar</a></td>
+                </tr>
+            }
+        </table>
+        <a href="/Articulos/Alta">Agregar</a>
+    </div>
+</body>
+</html>
